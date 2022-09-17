@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Electron App</title>
+
+    
+</head>
+<body style="user-select: none ; -webkit-app-region:drag">
+    <h4>Parent Speaking</h4>
+    <br>
+    <br>
+    <button onclick="zoomIn()">Zoom In</button>
+    <button onclick="zoomOut()">Zoom Out</button>
+
+     <a href="child.html" target="_blank" style="-webkit-app-region:none">Go to Child</a> 
+    <a href="https://www.instagram.com/misbahvisuals/"  target="_blank">My instagram</a>
+    <script>  
+        const {webFrame}=require('electron')
+        function zoomIn(){
+            webFrame.setZoomFactor(webFrame.getZoomFactor()+1)
+        }
+        function zoomOut(){
+            webFrame.setZoomFactor(webFrame.getZoomFactor()-1)
+        }
+    </script>
+</body>
+</html>
